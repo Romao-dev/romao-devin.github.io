@@ -15,7 +15,7 @@
     <header>
       <div class="wrap nav">
         <div class="logo">
-          <img class="avatar-mini" src="foto.jpg" alt="eu" />
+          <img class="avatar-mini" src="foto.jpg" alt="Foto de Romão Tavera" />
           &lt;<span>Romão Tavera</span>/&gt;
         </div>
         <nav class="nav-links">
@@ -261,6 +261,12 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Stagger animation para cards de projeto
+      const projectCards = document.querySelectorAll(".project-card.reveal");
+      projectCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+      });
 
       const reveals = document.querySelectorAll(".reveal");
       if ("IntersectionObserver" in window) {
